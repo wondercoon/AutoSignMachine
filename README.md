@@ -1,12 +1,18 @@
 # 介绍
 
-自动签到复活版
+自动签到 Github Action 版
 
 当前只在维护 Unicom 的部分，移除了部分过期活动
 
 ## 当前状态
 
-每天能获得 30+ 积分以及 2.5GB+ 日流量，建议配合 [UnicomTask](https://github.com/srcrs/UnicomTask) 食用。
+~~每天能获得 20+ 积分以及 2GB+ 日流量~~，建议配合 [UnicomTask](https://github.com/srcrs/UnicomTask) 食用。
+
+由于联通的活动在不断更新，现在是每天 “猜1G” 流量，所以具体实际每日获取流量也在不断变动中。
+
+目前是打开了自动领取“猜1G”的流量，在每天的 16:00 后开始运行。并且积分和流量都是**同时领取了 Android 和 iOS 的**。
+
+所以预估每天可以获得 30+ 的积分和 1G ～ 3G 流量。
 
 ## 必读必读
 
@@ -32,6 +38,20 @@ UNICOM_APPID = 'xxxxxx'
 5. 参考该项目[UnicomTask](https://github.com/srcrs/UnicomTask#3%E5%B0%86%E5%8F%82%E6%95%B0%E5%A1%AB%E5%88%B0secrets)，增加一个 Secrets 名为 UNICOM_CONFIG，值为第 4 步获得的编码后配置文件
 6. 最后还是参考该项目 [UnicomTask](https://github.com/srcrs/UnicomTask#4%E5%BC%80%E5%90%AFactions) 运行 Github Action
 
+## 自动更新
+
+前提：我假设大家的项目都是 fork 的本项目
+
+我会时不时抽空维护该项目，所以偶尔会向本项目提交代码。
+
+fork 的项目是不会自动拉取原项目最新提交的内容的。
+
+所以我们需要配置好自动更新，保证能用上最新的代码。
+
+**尽可能不要去修改你 fork 的代码，不然在自动拉取代码的时候会产生冲突，导致拉取失败。** 添加 Github Action Secrets 不受影响
+
+安装 [Pull](https://github.com/apps/pull) 应用并配置好同步本项目即可。
+
 ## 一些说明
 
 该项目是支持了自动调度的，也就是它会随机地在一天中完成所有任务，而不是集中到某一小段时间完成。这样可以模拟人在操作，防止屏蔽。
@@ -43,6 +63,15 @@ UNICOM_APPID = 'xxxxxx'
 下面的是现在有问题的部分功能，大佬们如果感兴趣可以修一修 🙃
 
 - [ ] 【首页】-【游戏】-【每日打卡】-【每日任务】，脚本可以自动玩游戏，但自动领取被风控了，需要手动点击领取
+
+## 相关项目
+
+- [UnicomTask](https://github.com/srcrs/UnicomTask) Python 版的自动签到，会 python 的可以鼓捣鼓捣
+- [88-AutoSignMachine](https://github.com/simo8102/88-AutoSignMachine) 联通挂机任务积分脚本，@simo8102 维护得很好，功能比本项目多。以后空了会考虑研究该项目的无服务器自动化方法（到时候还没弄的话🤣）。
+
+**这个项目只是为了分享自己学习的一些 CI 相关知识，不为任何捐赠、star。觉得有趣你可以支持，有更好的技巧也可以互相学习成长。**
+
+**有问题可以提问，任何人空闲的时候都可以给予回答，但本项目没有任何义务向任何人提供尽善尽美的指导和服务。**
 
 #
 #
